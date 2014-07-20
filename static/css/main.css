@@ -71,7 +71,7 @@ em {
 */
 .ccol {
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 800px;
     width: 95%;
 }
 
@@ -330,12 +330,12 @@ dd {
     RESPONSIVE DESIGN
 */
 /*
-     Screens less than 1011px
-     .ccol is 95% of page-width, to a maximum of 960px. If the width is 960px, the total width is
-     960px/0.95 ~ 1010.5px. That is when we get rid of the left border-line, as the content fills
+     Screens less than 843px
+     .ccol is 95% of page-width, to a maximum of 800px. If the width is 800px, the total width is
+     800px/0.95 ~ 842.1px. That is when we get rid of the left border-line, as the content fills
      the whole page width.
 */
-@media all and (max-width: 1010px) {
+@media all and (max-width: 842px) {
     #body {
         border-left: 0px;
         padding-left: 0em;
