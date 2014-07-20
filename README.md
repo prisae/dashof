@@ -19,26 +19,29 @@ In oder to make it work, you have to adjust a few things in your `pelicanconf.py
 
 1. It requires to know where the blog-directory is:
 
-    :::text
+    ```
     BLOGDIR = 'blog'
+    ```
 
 2. You have to insert your blog-directory into the `PAGINATION_PATTERNS`:
 
-    :::text
+    ```
     PAGINATION_PATTERNS = (
         (1, '{base_name}/index.html', '{base_name}/blog/index.html'),
         (2, '{base_name}/index{number}.html', '{base_name}/blog/index{number}.html'),
         )
+    ```
 
 3. The blog-name in the static menu must agree with your `BLOGDIR` (the example
    is from my setting):
 
-    :::text
+    ```
     MENUITEMS = (
            ('Blog', 'blog'),
            ('Research', 'research'),
            ('About', 'about')
            )
+    ```
 
 4. The contact-page has an additional header, calling the validating java
    script. The template takes your first entry of the `LINKS` as your contact
