@@ -157,11 +157,14 @@ em {
 .paginator { /* On blog-index for next/previous */
     text-align: center;
 }
+.entry-title, /* Blog title */
+.entry-title h1 {
+    font-weight: 400;
+    font-family: 'Special Elite';
+}
 .entry-title { /* Blog title */
     margin: 2em 0 .3em;
     padding: 0;
-    font-weight: 400;
-    font-family: 'Special Elite';
 }
 .hentry {} /* Summary */
 .entry-content {} /* Blog entry */
@@ -181,7 +184,7 @@ em {
     font-family: 'Special Elite';
 }
 .codehilite {
-    font-size: 0.9em;
+    font-size: .9em;
     font-family: 'Ubuntu Mono';
     font-weight: normal;
     margin: 0;
@@ -193,10 +196,9 @@ em {
     padding-left: 10px;
     margin: 0;
     overflow: auto;
-    border-left: 2px solid #900;
-    border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border-color: #ccc #ccc #ccc #900;
+    border-style: solid;
+    border-width: 1px 1px 1px 2px;
     max-width: 100%;
 
 }
@@ -267,14 +269,14 @@ dd {
     border: 1px solid #090;
     border-radius: 4px;
     height: 20px;
-    margin: 2px 6px 16px 0px;
+    margin: 2px 6px 16px 0;
     outline: 0 none;
     padding: 10px;
     width: 100%;
 }
 .mail-me input[type="text"]:focus,
 .mail-me textarea:focus {
-    box-shadow: 0px 0px 4px #090;
+    box-shadow: 0 0 4px #090;
   }
 .mail-me textarea {
     height: 100px;
@@ -338,7 +340,7 @@ dd {
 .tightbutton:active{
     color: #090;
     transition: .5s;
-    box-shadow: 0px 0px 4px #900; 
+    box-shadow: 0 0 4px #900; 
 }
 
 /*
@@ -352,8 +354,8 @@ dd {
 */
 @media all and (max-width: 842px) {
     #body {
-        border-left: 0px;
-        padding-left: 0em;
+        border-left: 0;
+        padding-left: 0;
     }
 }
 
@@ -404,8 +406,8 @@ dd {
         padding-bottom: 0;
     }
     #body {
-        border-left: 0px;
-        padding-left: 0em;
+        border-left: 0;
+        padding-left: 0;
     }
     #foot,
     #nav,
