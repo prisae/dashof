@@ -46,5 +46,5 @@ In oder to make it work, you have to adjust a few things in your `pelicanconf.py
 4. The contact-page has an additional header, calling the validating java
    script. The template takes your first entry of the `LINKS` as your contact
    page. Otherwise, you have to adjust the `page.html` template.
-   But then, you might want to to the contact form completely different anyway.
+   But then, you might want to do the contact form completely different anyway.
 
