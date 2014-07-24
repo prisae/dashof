@@ -56,6 +56,5 @@ In oder to make it work, you have to adjust a few things in your `pelicanconf.py
 
 The file `pygment.css` was created with
 
-    ```
     $ pygmentize -S default -f html > dashof/static/css/pygment.css
-    ```
+
