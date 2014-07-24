@@ -1,22 +1,21 @@
 {% extends "base.html" %}
-{% block title %}{{ SITENAME }} | Blog{% endblock %}
-{% block content %}
-<section id="content">
-{% block content_title %}
-<h1>Blog</h1>
+{% block title %}
+{{ SITENAME }} | Blog
 {% endblock %}
-
-<ol id="post-list">
-{% for article in articles_page.object_list %}
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
-                <footer class="post-info">
-                    <p class="published"> {{ article.locale_date }} </p>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
-        </article></li>
-{% endfor %}
-</ol><!-- /#posts-list -->
-{% include 'pagination.html' %}
-</section><!-- /#content -->
+{% block content %}
+            <h1 class="con-title">Blog</h1>
 {% endblock content %}
+{% block content_body %}
+              <section class="optborder">
+                <ol class="post-list">
+                  {% for article in articles_page.object_list %}
+                  <li class="post-list">
+                    <h2 class="post-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+                    <p class="post-info"> {{ article.locale_date }} </p>
+                    <p class="post-summary"> {{ article.summary }} </p>
+                  </li>
+                  {% endfor %}
+                </ol><!-- /#posts-list -->
+              </section>
+              {% include 'pagination.html' %}
+{% endblock content_body %}

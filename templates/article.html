@@ -1,50 +1,34 @@
 {% extends "base.html" %}
 {% block head %}
-  {% for keyword in article.keywords %}
-    <meta name="keywords" contents="{{keyword}}" />
-  {% endfor %}
-
-  {% for description in article.description %}
-    <meta name="description" contents="{{description}}" />
-  {% endfor %}
-
-  {% for tag in article.tags %}
-    <meta name="tags" contents="{{tag}}" />
-  {% endfor %}
-
+  {% for keyword in article.keywords %}<meta name="keywords" contents="{{keyword}}" />{% endfor %}
+  {% for description in article.description %}<meta name="description" contents="{{description}}" />{% endfor %}
+  {% for tag in article.tags %}<meta name="tags" contents="{{tag}}" />{% endfor %}
+{% endblock head%}
+{% block title %}
+{{ SITENAME }} | Blog
 {% endblock %}
-
 {% block content %}
-<section id="content" class="body">
-  <header>
-    <h1 class="entry-title">
-      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-         title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
-  </header>
-  <footer class="post-info">
-    <p class="published"> {{ article.locale_date }}</p>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    {{ article.content }}
-  </div><!-- /.entry-content -->
-
-    {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
-    <div class="comments hgrad">
-      <h2>Comments</h2>
-      <p>Guest comments are possible, just tick the box "I'd rather post as guest" once you entered your name.</p>
-
-      <div id="disqus_thread"></div>
-      <script type="text/javascript">
-        var disqus_identifier = "{{ article.url }}";
-        var disqus_url = "{{ SITEURL }}/{{ BLOGDIR }}/{{ article.url }}";
-        (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-    </div>
-    {% endif %}
-
-</section>
-{% endblock %}
+      <h1 class="con-title post-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
+      <p class="con-title post-info"> {{ article.locale_date }}</p>
+{% endblock content %}
+{% block content_body %}
+        <article class="optborder">
+          {{ article.content }}
+        </article>
+        {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+        <div class="optborder comments hgrad">
+          <h2>Comments</h2>
+          <p>Guest comments are possible, just tick the box "I'd rather post as guest" once you entered your name.</p>
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            var disqus_identifier = "{{ article.url }}";
+            var disqus_url = "{{ SITEURL }}/{{ BLOGDIR }}/{{ article.url }}";
+            (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+        </div>
+        {% endif %}
+{% endblock content_body %}

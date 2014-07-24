@@ -1,8 +1,8 @@
 /*
-    Main CSS file of pelican-theme `dashof`.
-    2014 Dieter Werthmuller
-    *
-    License: CC0 1.0; http://creativecommons.org/publicdomain/zero/1.0/
+  Main CSS file of pelican-theme `dashof`.
+  2014 Dieter Werthmuller
+  *
+  License: CC0 1.0; http://creativecommons.org/publicdomain/zero/1.0/
 */
 @import url(normalize.css);
 @import url(pygment.css);
@@ -11,407 +11,399 @@
 @import url(http://fonts.googleapis.com/css?family=Special+Elite);
 
 /*
-    GENERAL SETTINGS
+  GENERAL SETTINGS
 */
 html {
-    height: 100%;
-    min-width: 320px; /* Responsive design (@media at the bottom) takes care
-                         down to 320px. That's the minimum */
+  height: 100%;
+  min-width: 320px; /* Responsive design (@media at the bottom) takes care
+                       down to 320px. That's the minimum */
 }
 body {
-    background: #fefefe;
-    color: #000;
-    font-family: 'Ubuntu',sans-serif;
-    font-size: 1em;
-    font-weight: 400;
-    height: 100%;
-    line-height: 1.5em;
-    margin: auto;
-    padding: 0;
-    text-align: left;
-    width: 100%;
+  background: #fefefe;
+  color: #000;
+  font-family: 'Ubuntu',sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  height: 100%;
+  line-height: 1.5em;
+  margin: auto;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+header,
+nav,
+main,
+section,
+article,
+summary,
+footer {
+  display: block;
 }
 a:link,
 a:visited {
-    color: #009;
-    text-decoration: none;
+  color: #009;
+  text-decoration: none;
 }
 a:hover,
 a:active {
-    color: #900;
-    transition: .5s;
+  color: #900;
+  transition: .5s;
 }
 strong {
-    font-weight: 700;
+  font-weight: 700;
 }
 em {
-    font-weight: 400;
+  font-weight: 400;
 }
 .caps {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 .libracket { /* Elliptic borders around links */
-    border-left: 2px solid #900;
-    border-radius: 1em/2em;
-    border-right: 2px solid #900;
-    padding: 0 .3em;
+  border-left: 2px solid #900;
+  border-radius: 1em/2em;
+  border-right: 2px solid #900;
+  padding: 0 .3em;
 }
 .hgrad:before { /* Horizontal green gradient */
-    background: linear-gradient(to right, #fff 0%,#090 50%,#fff 100%);
-    content: "";
-    display: block;
-    height: 1px;
-    margin: .3em 0;
-    width: 100%;
+  background: linear-gradient(to right, #fff 0%,#090 50%,#fff 100%);
+  content: "";
+  display: block;
+  height: 1px;
+  margin: .3em 0;
+  width: 100%;
 }
 
 /*
-    CENTRE COLUMN
-    Where everything is inside, except banner
+  CENTRE COLUMN
+  Where everything is inside, except banner
 */
 .ccol {
-    margin: 0 auto;
-    max-width: 800px;
-    width: 95%;
+  margin: 0 auto;
+  max-width: 800px;
+  width: 95%;
 }
 
 /*
-    WRAPPER
-    Needed so footer is at bottom if page is less than 100 % height
+  WRAPPER
+  Needed so footer is at bottom if page is less than 100 % height
 */
 #wrapper {
-    min-height: 100%;
-    position: relative;
+  min-height: 100%;
+  position: relative;
 }
 
 /*
-    HEADER
+  HEADER
 */
 #head {
-    background: transparent url(/theme/images/banner.svg) repeat-x bottom;
-    padding-bottom: 26px;
-    text-align: right;
+  background: transparent url(/theme/images/banner.svg) repeat-x bottom;
+  padding-bottom: 26px;
+  text-align: right;
 }
 #head h1 {
-    font-family: 'Special Elite';
-    font-size: 2.5em;
-    font-weight: 400;
-    padding: 1em 0 .3em 0;
+  font-family: 'Special Elite';
+  font-size: 2.5em;
+  font-weight: 400;
+  padding: 1em 0 .3em;
 }
 #head h2 {
-    font-size: 1.2em;
-    font-weight: 300;
+  font-size: 1.2em;
+  font-weight: 300;
 }
 #head a:link,
 #head a:visited,
 #head a:hover,
 #head a:active {
-    color: #900;
+  color: #900;
 }
 
 /*
-    NAVIGATION
+  NAVIGATION
 */
 #nav {
-    font-size: 1.2em;
-    padding: 0 0 1em 0;
-    text-align: center;
+  font-size: 1.2em;
+  text-align: center;
 }
 #nav ul {
-    display: inline-block;
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-    text-align: center;
+  display: inline-block;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
 }
 #nav li {
-    display: inline;
-    margin: 0 1.3em;
+  display: inline;
+  margin: 0 1.3em;
 }
 
 /*
-    MAIN BODY
+  MAIN BODY
 */
-#outerbody {              /* This extra-loop is required in addition to      */
-    padding-bottom: 80px; /* wrapper so that the border-left of the body is  */
-}                         /* not going into the footer.                      */
-#body {
-    border-left: 1px solid #ccc;
-    padding-left: 1em;
+#content {            /* This extra-loop is required in addition to      */
+  padding-bottom: 80px; /* wrapper so that the border-left of the body is  */
+}                       /* not going into the footer.                      */
+.optborder {
+  border-left: 1px solid #ccc;
+  padding-left: 1em;
 }
-#content {}
-#content ul {
-    display: inline-block;
-    list-style: none;
-    margin: 0 auto;
-    text-align: center;
-}
-#content li {
-    display: inline;
-    margin: 0 auto;
+.con-title {
+  margin: 1.5em 1em;
 }
 
 /*
-    BLOG
+  BLOG
 */
-.paginator { /* On blog-index for next/previous */
-    text-align: center;
+.post-title, /* Blog title */
+.post-info { /* Where date, author, tags etc is in */
+  font-weight: 400;
+  font-family: 'Special Elite';
 }
-.entry-title, /* Blog title */
-.entry-title h1 {
-    font-weight: 400;
-    font-family: 'Special Elite';
+.post-list {} /* list of posts on index */
+.post-list ul {
+  display: inline-block;
+  list-style: none;
+  margin: 0 auto;
+  text-align: center;
 }
-.entry-title { /* Blog title */
-    margin: 2em 0 .3em;
-    padding: 0;
+.post-list li {
+  display: inline;
+  margin: 0 auto;
 }
-.hentry {} /* Summary */
-.entry-content {} /* Blog entry */
-.entry-content h1,
-.entry-content h2 {
-    margin-top: 1.5em;
-}
-.comments { /* Comments section */
-    margin-top: 5em;
-}
-.post-info {} /* Where date, author, tags etc is in */
-#post-list {} /* list of posts on index */
 .published { /* Date of blog */
-    margin: 0 0 1em 1em;
-    padding: 0;
-    font-weight: 400;
-    font-family: 'Special Elite';
+  margin: 0 0 1em 1em;
+  padding: 0;
+  font-weight: 400;
+  font-family: 'Special Elite';
 }
 .codehilite {
-    font-size: .9em;
-    font-family: 'Ubuntu Mono';
-    font-weight: normal;
-    margin: 0;
-    padding-left: 10px;
-    line-height: 1.3em;
+  font-size: .9em;
+  font-family: 'Ubuntu Mono';
+  font-weight: normal;
+  margin: 0;
+  padding-left: 10px;
+  line-height: 1.3em;
 }
 .codehilite pre {
-    background: #fff;
-    padding-left: 10px;
-    margin: 0;
-    overflow: auto;
-    border-color: #ccc #ccc #ccc #900;
-    border-style: solid;
-    border-width: 1px 1px 1px 2px;
-    max-width: 100%;
+  background: #fff;
+  padding-left: 10px;
+  margin: 0;
+  overflow: auto;
+  border-color: #ccc #ccc #ccc #900;
+  border-style: solid;
+  border-width: 1px 1px 1px 2px;
+  max-width: 100%;
 
 }
-code {
-    font-family: 'Ubuntu Mono';
-    font-weight: normal;
-}
-dl {
-    margin: 0 0 1.5em 0;
-}
-dt {
-    font-weight: bold;
-}
-dd {
-    margin-left: 1.5em;
+code { /* Inline code */
+  font-family: 'Ubuntu Mono';
+  font-weight: normal;
 }
 .linenos {}
+.paginator { /* On blog-index for next/previous */
+  text-align: center;
+}
+.comments { /* Comments section */
+  margin-top: 5em;
+}
 
 /*
-    RESEARCH
-    The research section has some special formatting
+  RESEARCH
+  The research section has some special formatting
 */
 .research {}
 .research ul {
-    list-style: none;
+  list-style: none;
 }
 .research li {
-    margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
 }
 .research h2 {
-    margin-top: 2em;
+  margin-top: 2em;
 }
 .research h3,
 .research h4 {
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
 }
 .research h3 {
-    color: #900;
+  color: #900;
 }
 .research p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .research small {
-    display: block;
-    font-size: .8em;
-    padding-bottom: 2em;
+  display: block;
+  font-size: .8em;
+  padding-bottom: 2em;
 }
 
 /*
-    Contact form
+  Contact form
 */
 .mail-me {
-    max-width: 500px;
-    margin: 0 2em 0 0;
-    line-height: 1.6;
-    padding: 15px;
+  margin: 0 2em 0 0;
+  line-height: 1.6;
+  padding: 15px;
+  max-width: 500px;
 }
 .mail-me h3 {
-    font-weight: 700;
-    margin: 10px 0 0;
-    padding: 0 0 0 10px;
+  font-weight: 700;
+  margin: 10px 0 0;
+  padding: 0 0 0 10px;
 }
 .mail-me input[type="text"],
 .mail-me textarea {
-    border: 1px solid #090;
-    border-radius: 4px;
-    height: 20px;
-    margin: 2px 6px 16px 0;
-    outline: 0 none;
-    padding: 10px;
-    width: 100%;
+  border: 1px solid #090;
+  border-radius: 4px;
+  height: 20px;
+  margin: 2px 6px 16px 0;
+  outline: 0 none;
+  padding: 10px;
+  width: 100%;
 }
 .mail-me input[type="text"]:focus,
 .mail-me textarea:focus {
-    box-shadow: 0 0 4px #090;
+  box-shadow: 0 0 4px #090;
   }
 .mail-me textarea {
-    height: 100px;
+  height: 100px;
 }
 .error_strings { /* Error by sending message; class from gen_validatorv4.js */
-    color: #900;
-    }
+  color: #900;
+  }
 
 /*
-    FOOTER
+  FOOTER
 */
 #foot {
-    text-align: center;
-    bottom: 0;
-    height: 55px;
-    position: absolute;
-    width: 100%;
+  bottom: 0;
+  height: 55px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
 #foot p {
-    margin: 0;
-    font-size: .8em;
-    font-weight: 300;
+  font-size: .8em;
+  font-weight: 300;
+  margin: 0;
 }
 #foot ul {
-    display: inline-block;
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-    text-align: center;
+  display: inline-block;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
 }
 #foot li {
-    display: inline;
-    margin: 0 1.5em;
+  display: inline;
+  margin: 0 1.5em;
 }
 #foot p a:link,
 #foot p a:hover,
 #foot p a:visited,
 #foot p a:active {
-    color: #000;
-    font-weight: 400;
+  color: #000;
+  font-weight: 400;
 }
 
 /*
-    Buttons
+  Buttons
 */
 .button,
 .tightbutton {
-    background: #EEE;
-    border: 2px solid #900;
-    border-radius: 4px;
-    color: #009;
-    font-weight: bold;
-    padding: 10px 25px;
+  background: #EEE;
+  border: 2px solid #900;
+  border-radius: 4px;
+  color: #009;
+  font-weight: 700;
+  padding: 10px 25px;
 }
 .tightbutton {
-    padding: 2px 4px;
+  padding: 2px 4px;
 }
 .button:hover,
 .button:active,
 .tightbutton:hover,
 .tightbutton:active{
-    color: #090;
-    transition: .5s;
-    box-shadow: 0 0 4px #900; 
+  color: #090;
+  transition: .5s;
+  box-shadow: 0 0 4px #900; 
 }
 
 /*
-    RESPONSIVE DESIGN
+  RESPONSIVE DESIGN
 */
 /*
-     Screens less than 843px
-     .ccol is 95% of page-width, to a maximum of 800px. If the width is 800px, the total width is
-     800px/0.95 ~ 842.1px. That is when we get rid of the left border-line, as the content fills
-     the whole page width.
+  Screens less than 843px
+  .ccol is 95% of page-width, to a maximum of 800px. If the width is 800px, the
+  total width is 800px/0.95 ~ 842.1px. That is when we get rid of the left
+  border-line, as the content fills the whole page width.
 */
 @media all and (max-width: 842px) {
-    #body {
-        border-left: 0;
-        padding-left: 0;
-    }
+  .optborder {
+    border-left: 0;
+    padding-left: 0;
+  }
 }
 
 /*
-    Screens less than 480px
-    If width is smaller than 480px, we have to decrease title and foot font-sizes, and some of the
-    margin/padding, in order to fit the whole title, nav-bar, link-bar, and bottom-comment on one line each.
+  Screens less than 480px
+  If width is smaller than 480px, we have to decrease title and foot
+  font-sizes, and some of the margin/padding, in order to fit the whole title,
+  nav-bar, link-bar, and bottom-comment on one line each.
 */
 @media all and (max-width: 479px) {
-    #head h1 {
-        font-size: 2.2em;
-    }
-    #head h1,
-    #head h2 {
-        margin: 0 10px 0 auto;
-    }
-    #nav li,
-    #foot li {
-        margin: 0 .5em;
-    }
-    #foot p {
-        font-size: .7em;
-    }
+  #head h1 {
+    font-size: 2.2em;
+  }
+  #head h1,
+  #head h2 {
+    margin: 0 10px 0 auto;
+  }
+  #nav li,
+  #foot li {
+    margin: 0 .5em;
+  }
+  #foot p {
+    font-size: .7em;
+  }
 }
 
 /*
-    Screens less than 360px
-    Further decrease the font-size of the title, to fit width. Note, 320px is set to min-width in html
-    (top of main.css), if width is <320px a horizontal scroll-bar will appear.
+  Screens less than 360px
+  Further decrease the font-size of the title, to fit width. Note, 320px is set
+  to min-width in html (top of main.css), if width is <320px a horizontal
+  scroll-bar will appear.
 */
 @media all and (max-width: 359px) {
-    #head h1 {
-        font-size: 2em;
-    }
+  #head h1 {
+    font-size: 2em;
+  }
 }
 
 /*
-    Print settings
-    Just a few.
+  Print settings
+  Just a few.
 */
 @media print {
-    body {
-        background: #ffffff;
-        font-size: .9em;
-        line-height: 1.1em;
-    }
-    #head {
-        padding-bottom: 0;
-    }
-    #body {
-        border-left: 0;
-        padding-left: 0;
-    }
-    #foot,
-    #nav,
-    .button {
-        display: none;
-    }
+  body {
+    background: #ffffff;
+    font-size: .9em;
+    line-height: 1.1em;
+  }
+  #head {
+    padding-bottom: 0;
+  }
+  .optborder {
+    border-left: 0;
+    padding-left: 0;
+  }
+  #foot,
+  #nav,
+  .button {
+    display: none;
+  }
 }

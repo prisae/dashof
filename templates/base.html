@@ -1,54 +1,50 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no">
 
-    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-    <meta name="description" content="{{ SITENAME }}">
-    <meta name="author" content="{{ AUTHOR }}">
+  <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+  {% block head %}
+  {% endblock head %}
+  <meta name="description" content="{{ SITENAME }}">
+  <meta name="author" content="{{ AUTHOR }}">
 
-    {% block head %}
-    {% endblock head %}
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
-    <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 
 <body>
   <div id="wrapper"><!-- Wrapper makes sure body doesn't overlap footer -->
 
-    <!-- Start head -->
-    <div id="head">
+    <header id="head">
       <h1 class="ccol"><a title="Home" href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
       <h2 class="ccol">{{ SITESUBTITLE }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
-    </div>
-    <!-- End head -->
+    </header>
 
-    <!-- Start nav -->
-    <div id="nav" class="ccol">
+    <nav id="nav" class="ccol">
       <ul>
         {% for name, url in MENUITEMS %}
         <li><a href="{{ SITEURL }}/{{ url }}">{{ name }}</a></li>
         {% endfor %}
       </ul>
-    </div>
-    <!-- End nav -->
+    </nav>
 
-    <!-- Start body -->
-    <!-- outerbody makes sure the border of body does not go into footer-->
-    <div id="outerbody">
-      <div id="body" class="ccol">
-        {% block content %}
-        {% endblock content %}
+    <main id="content" class="ccol">
+      {% block content %}
+      {% endblock content %}
+      <div id="con_body" class="ccol"><!-- This div has the optional left border -->
+        {% block content_body %}
+        {% endblock content_body %}
       </div>
-    </div>
-    <!-- End body -->
+    </main>
 
-    <!-- Start foot -->
-    <div id="foot">
+    <footer id="foot">
       <ul>
         {% for name, url in LINKS %}
         {% if url[:3] == 'htt' or url[:3] == 'www' %}
@@ -59,15 +55,15 @@
         {% endfor %}
       </ul>
       <p class="hgrad">
-        <a href="{{ SITEURL }}/about/#license">CC0 1.0</a>
-        &nbsp;&nbsp;&middot;&nbsp;&nbsp;
-        2014 {{ AUTHOR }}
-        &nbsp;&nbsp;&middot;&nbsp;&nbsp;
-        Built with <a href="https://github.com/getpelican/pelican">Pelican</a>
+      <a href="{{ SITEURL }}/about/#license">CC0 1.0</a>
+      &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+      2014 {{ AUTHOR }}
+      &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+      Built with <a href="http://getpelican.com">Pelican</a>
       </p>
-    </div>
-    <!-- End Foot -->
+    </footer>
 
-  </div><!-- End wrapper -->
+  </div><!-- /wrapper -->
 </body>
+
 </html>
