@@ -43,8 +43,19 @@ In oder to make it work, you have to adjust a few things in your `pelicanconf.py
            )
     ```
 
-4. The contact-page has an additional header, calling the validating java
+4. The footer is defined in its own tag as a string:
+
+    ```
+    FOOTER = 'My Site ~ 2014 Example Author'
+    ```
+
+5. The contact-page has an additional header, calling the validating java
    script. The template takes your first entry of the `LINKS` as your contact
    page. Otherwise, you have to adjust the `page.html` template.
    But then, you might want to do the contact form completely different anyway.
 
+The file `pygment.css` was created with
+
+    ```
+    $ pygmentize -S default -f html > dashof/static/css/pygment.css
+    ```
