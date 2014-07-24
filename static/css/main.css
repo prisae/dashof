@@ -30,6 +30,7 @@ body {
   padding: 0;
   text-align: left;
   width: 100%;
+  max-width: 1050px;
 }
 header,
 nav,
@@ -37,7 +38,7 @@ main,
 section,
 article,
 summary,
-footer {
+footer { /* HTML structural elements */
   display: block;
 }
 a:link,
@@ -59,30 +60,6 @@ em {
 .caps {
   text-transform: uppercase;
 }
-.libracket { /* Elliptic borders around links */
-  border-left: 2px solid #900;
-  border-radius: 1em/2em;
-  border-right: 2px solid #900;
-  padding: 0 .3em;
-}
-.hgrad:before { /* Horizontal green gradient */
-  background: linear-gradient(to right, #fff 0%,#090 50%,#fff 100%);
-  content: "";
-  display: block;
-  height: 1px;
-  margin: .3em 0;
-  width: 100%;
-}
-
-/*
-  CENTRE COLUMN
-  Where everything is inside, except banner
-*/
-.ccol {
-  margin: 0 auto;
-  max-width: 800px;
-  width: 95%;
-}
 
 /*
   WRAPPER
@@ -96,43 +73,46 @@ em {
 /*
   HEADER
 */
-#head {
+header {
   background: transparent url(/theme/images/banner.svg) repeat-x bottom;
-  padding-bottom: 26px;
+  padding-bottom: 30px;
   text-align: right;
 }
-#head h1 {
+header h1 {
   font-family: 'Special Elite';
   font-size: 2.5em;
   font-weight: 400;
-  padding: 1em 0 .3em;
+  margin: 1.5em 1em .3em 0;
 }
-#head h2 {
+header h2 {
   font-size: 1.2em;
   font-weight: 300;
+  margin: 1em 4em 0 0;
 }
-#head a:link,
-#head a:visited,
-#head a:hover,
-#head a:active {
+header a:link,
+header a:visited,
+header a:hover,
+header a:active {
   color: #900;
 }
 
 /*
   NAVIGATION
 */
-#nav {
+nav {
   font-size: 1.2em;
+  margin: 0 auto;
   text-align: center;
+  width: 95%;
 }
-#nav ul {
+nav ul {
   display: inline-block;
   list-style: none;
   margin: 0 auto;
   padding: 0;
   text-align: center;
 }
-#nav li {
+nav li {
   display: inline;
   margin: 0 1.3em;
 }
@@ -140,26 +120,28 @@ em {
 /*
   MAIN BODY
 */
-#content {            /* This extra-loop is required in addition to      */
-  padding-bottom: 80px; /* wrapper so that the border-left of the body is  */
-}                       /* not going into the footer.                      */
+main {
+  margin: 0 auto;
+  max-width: 800px;
+  padding-bottom: 80px;
+  padding-left: 1em;
+  width: 95%;
+}
+main h1 {
+  margin: 1.5em 0 1em;
+}
 .optborder {
   border-left: 1px solid #ccc;
-  padding-left: 1em;
 }
-.con-title {
-  margin: 1.5em 1em;
-}
-
-/*
-  BLOG
-*/
-.post-title, /* Blog title */
-.post-info { /* Where date, author, tags etc is in */
+.post-title {} /* Blog head area */
+.post-list {} /* List of posts */
+.post-title h1,
+.post-title h4,
+.post-list h2,
+.post-list h4 {
   font-weight: 400;
   font-family: 'Special Elite';
 }
-.post-list {} /* list of posts on index */
 .post-list ul {
   display: inline-block;
   list-style: none;
@@ -169,12 +151,6 @@ em {
 .post-list li {
   display: inline;
   margin: 0 auto;
-}
-.published { /* Date of blog */
-  margin: 0 0 1em 1em;
-  padding: 0;
-  font-weight: 400;
-  font-family: 'Special Elite';
 }
 .codehilite {
   font-size: .9em;
@@ -199,12 +175,23 @@ code { /* Inline code */
   font-family: 'Ubuntu Mono';
   font-weight: normal;
 }
-.linenos {}
 .paginator { /* On blog-index for next/previous */
   text-align: center;
 }
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
 .comments { /* Comments section */
   margin-top: 5em;
+  background: linear-gradient(to right, #fff 0%,#090 50%,#fff 100%);
+  content: "";
+  display: block;
+  height: 1px;
+  margin: .3em 0;
+  width: 100%;
 }
 
 /*
@@ -244,8 +231,8 @@ code { /* Inline code */
   Contact form
 */
 .mail-me {
-  margin: 0 2em 0 0;
   line-height: 1.6;
+  margin: 0 2em 0 0;
   padding: 15px;
   max-width: 500px;
 }
@@ -278,33 +265,43 @@ code { /* Inline code */
 /*
   FOOTER
 */
-#foot {
+footer {
   bottom: 0;
   height: 55px;
   position: absolute;
   text-align: center;
   width: 100%;
 }
-#foot p {
+footer p {
   font-size: .8em;
   font-weight: 300;
   margin: 0;
+  background: linear-gradient(to right, #fff 0%,#090 50%,#fff 100%);
+  content: "";
+  display: block;
+  height: 1px;
+  margin: .3em 0;
+  width: 100%;
 }
-#foot ul {
+footer ul {
   display: inline-block;
   list-style: none;
   margin: 0 auto;
   padding: 0;
   text-align: center;
 }
-#foot li {
+footer li {
+  border-left: 2px solid #900;
+  border-radius: 1em/2em;
+  border-right: 2px solid #900;
   display: inline;
   margin: 0 1.5em;
+  padding: 0 .3em;
 }
-#foot p a:link,
-#foot p a:hover,
-#foot p a:visited,
-#foot p a:active {
+footer p a:link,
+footer p a:hover,
+footer p a:visited,
+footer p a:active {
   color: #000;
   font-weight: 400;
 }
@@ -338,17 +335,18 @@ code { /* Inline code */
 */
 /*
   Screens less than 843px
-  .ccol is 95% of page-width, to a maximum of 800px. If the width is 800px, the
+  Main is 95% of page-width, to a maximum of 800px. If the width is 800px, the
   total width is 800px/0.95 ~ 842.1px. That is when we get rid of the left
   border-line, as the content fills the whole page width.
 */
 @media all and (max-width: 842px) {
-  .optborder {
-    border-left: 0;
+  main {
     padding-left: 0;
   }
+  .optborder {
+    border-left: 0;
+  }
 }
-
 /*
   Screens less than 480px
   If width is smaller than 480px, we have to decrease title and foot
@@ -356,18 +354,14 @@ code { /* Inline code */
   nav-bar, link-bar, and bottom-comment on one line each.
 */
 @media all and (max-width: 479px) {
-  #head h1 {
+  header h1 {
     font-size: 2.2em;
   }
-  #head h1,
-  #head h2 {
-    margin: 0 10px 0 auto;
-  }
-  #nav li,
-  #foot li {
+  nav li,
+  footer li {
     margin: 0 .5em;
   }
-  #foot p {
+  footer p {
     font-size: .7em;
   }
 }
@@ -379,7 +373,7 @@ code { /* Inline code */
   scroll-bar will appear.
 */
 @media all and (max-width: 359px) {
-  #head h1 {
+  header h1 {
     font-size: 2em;
   }
 }
@@ -394,15 +388,17 @@ code { /* Inline code */
     font-size: .9em;
     line-height: 1.1em;
   }
-  #head {
+  header {
     padding-bottom: 0;
+  }
+  main {
+    padding-left: 0;
   }
   .optborder {
     border-left: 0;
-    padding-left: 0;
   }
-  #foot,
-  #nav,
+  footer,
+  nav,
   .button {
     display: none;
   }

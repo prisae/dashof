@@ -20,14 +20,14 @@
 </head>
 
 <body>
-  <div id="wrapper"><!-- Wrapper makes sure body doesn't overlap footer -->
+  <div id="wrapper"><!-- Wrapper makes sure body does not overlap footer -->
 
-    <header id="head">
-      <h1 class="ccol"><a title="Home" href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
-      <h2 class="ccol">{{ SITESUBTITLE }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+    <header>
+      <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+      <h2>{{ SITESUBTITLE }}</h2>
     </header>
 
-    <nav id="nav" class="ccol">
+    <nav>
       <ul>
         {% for name, url in MENUITEMS %}
         <li><a href="{{ SITEURL }}/{{ url }}">{{ name }}</a></li>
@@ -35,35 +35,21 @@
       </ul>
     </nav>
 
-    <main id="content" class="ccol">
+    <main>
       {% block content %}
       {% endblock content %}
-      <div id="con_body" class="ccol"><!-- This div has the optional left border -->
-        {% block content_body %}
-        {% endblock content_body %}
-      </div>
     </main>
 
-    <footer id="foot">
+    <footer>
       <ul>
         {% for name, url in LINKS %}
-        {% if url[:3] == 'htt' or url[:3] == 'www' %}
-        <li class="libracket"><a href="{{ url }}">{{ name }}</a></li>
-        {% else %}
-        <li class="libracket"><a href="{{ SITEURL }}/{{ url }}">{{ name }}</a></li>
-        {% endif %}
+        <li><a href="{{ url }}">{{ name }}</a></li>
         {% endfor %}
       </ul>
-      <p class="hgrad">
-      <a href="{{ SITEURL }}/about/#license">CC0 1.0</a>
-      &nbsp;&nbsp;&middot;&nbsp;&nbsp;
-      2014 {{ AUTHOR }}
-      &nbsp;&nbsp;&middot;&nbsp;&nbsp;
-      Built with <a href="http://getpelican.com">Pelican</a>
-      </p>
+      <p>{{ FOOTER }}</p>
     </footer>
 
-  </div><!-- /wrapper -->
+  </div><!-- /#wrapper -->
 </body>
 
 </html>

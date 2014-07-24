@@ -1,21 +1,34 @@
 {% extends "base.html" %}
+
 {% block title %}
 {{ SITENAME }} | Blog
 {% endblock %}
+
 {% block content %}
-            <h1 class="con-title">Blog</h1>
+      <h1>Blog</h1>
+
+      <section class="optborder post-list">
+        <ol>
+          {% for article in articles_page.object_list %}
+          <li>
+            <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
+            <h4> {{ article.locale_date }} </h4>
+            <p> {{ article.summary }} </p>
+          </li>
+          {% endfor %}
+        </ol>
+      </section>
+
+      {% if DEFAULT_PAGINATION %}
+      <div class="paginator">
+      {% if articles_page.has_previous() %}
+      <a class="tightbutton left" href="{{ SITEURL }}/{{ BLOGDIR }}/{{ articles_previous_page.url }}">&laquo;</a>
+      {% endif %}
+      Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}
+      {% if articles_page.has_next() %}
+      <a class="tightbutton right" href="{{ SITEURL }}/{{ BLOGDIR }}/{{ articles_next_page.url }}">&raquo;</a>
+      {% endif %}
+      </div>
+      {% endif %}
+
 {% endblock content %}
-{% block content_body %}
-              <section class="optborder">
-                <ol class="post-list">
-                  {% for article in articles_page.object_list %}
-                  <li class="post-list">
-                    <h2 class="post-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-                    <p class="post-info"> {{ article.locale_date }} </p>
-                    <p class="post-summary"> {{ article.summary }} </p>
-                  </li>
-                  {% endfor %}
-                </ol><!-- /#posts-list -->
-              </section>
-              {% include 'pagination.html' %}
-{% endblock content_body %}
