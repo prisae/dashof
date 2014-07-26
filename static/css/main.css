@@ -27,10 +27,10 @@ body {
   height: 100%;
   line-height: 1.5em;
   margin: auto;
+  max-width: 1050px;
   padding: 0;
   text-align: left;
   width: 100%;
-  max-width: 1050px;
 }
 header,
 nav,
@@ -60,22 +60,18 @@ em {
 .caps {
   text-transform: uppercase;
 }
-.caps {
-    text-transform: uppercase;
-}
 .libracket { /* Elliptic borders around links */
-    border-left: 2px solid #900;
-    border-radius: 1em/2em;
-    border-right: 2px solid #900;
-    padding: 0 .3em;
+  border-left: 2px solid #900;
+  border-radius: 1em/2em;
+  border-right: 2px solid #900;
+  padding: 0 .3em;
 }
 .hgrad:before { /* Horizontal green gradient */
-    background: linear-gradient(to right, #fff 0%,#090 50%,#fff 100%);
-    content: "";
-    display: block;
-    height: 1px;
-    margin: .3em 0;
-    width: 100%;
+  background: linear-gradient(to right, #fff 0%,#090 50%,#fff 100%);
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
 }
 /*
   WRAPPER
@@ -162,11 +158,18 @@ main h1 {
   font-weight: 400;
   font-family: 'Special Elite';
 }
+.post-title h1 {
+  line-height: 1.5;
+  margin: 1em 0 .5em 0;
+}
+.post-title h4 {
+  margin: 0 0 1.5em 1.5em;
+}
 .post-list h2 {
   margin: 1.5em 0 .2em 0;
 }
 .post-list h4 {
-  margin: 0;
+  margin: 0 0 0 1em;
 }
 .post-list ul {
   display: inline-block;
@@ -182,20 +185,19 @@ main h1 {
   font-size: .9em;
   font-family: 'Ubuntu Mono';
   font-weight: normal;
+  line-height: 1.3em;
   margin: 0;
   padding-left: 10px;
-  line-height: 1.3em;
 }
 .codehilite pre {
   background: #fff;
   padding-left: 10px;
-  margin: 0;
-  overflow: auto;
   border-color: #ccc #ccc #ccc #900;
   border-style: solid;
   border-width: 1px 1px 1px 2px;
+  margin: 0;
   max-width: 100%;
-
+  overflow: auto;
 }
 code { /* Inline code */
   font-family: 'Ubuntu Mono';
@@ -220,31 +222,26 @@ code { /* Inline code */
 */
 .research {}
 .research ul {
-    list-style: none;
+  list-style: none;
 }
 .research li {
-    margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
 }
 .research h2 {
-    margin-top: 2em;
+  margin-top: 2em;
 }
 .research h3,
 .research h4 {
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
 }
 .research h3 {
-    color: #900;
+  color: #900;
 }
 .research p {
-    margin: 0;
-    padding: 0;
-}
-.research small {
-    display: block;
-    font-size: .8em;
-    padding-bottom: 2em;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -274,13 +271,13 @@ code { /* Inline code */
 .mail-me input[type="text"]:focus,
 .mail-me textarea:focus {
   box-shadow: 0 0 4px #090;
-  }
+}
 .mail-me textarea {
   height: 100px;
 }
 .error_strings { /* Error by sending message; class from gen_validatorv4.js */
   color: #900;
-  }
+}
 
 /*
   FOOTER
@@ -344,6 +341,7 @@ footer p a:active {
 /*
   RESPONSIVE DESIGN
 */
+
 /*
   Screens less than 843px
   Main is 95% of page-width, to a maximum of 800px. If the width is 800px, the
@@ -357,6 +355,7 @@ footer p a:active {
     border-left: 0;
   }
 }
+
 /*
   Screens less than 480px
   If width is smaller than 480px, we have to decrease title and foot
