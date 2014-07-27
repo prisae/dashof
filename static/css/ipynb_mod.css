@@ -1,0 +1,52 @@
+/*
+  Modification to the ipynb.css.
+
+  These modifications are to match the IPython notebook with the main.css
+  theme, that I use in the rest of the website/blog.
+*/
+
+/* Reset font and size */
+div.prompt,
+pre.ipynb,
+div.output_area pre {
+  font-family: 'Ubuntu Mono';
+  font-size: 1em;
+  }
+/* Reset border radius */
+pre,
+div.input_area {
+  border-radius: 0;
+}
+pre.ipynb { /* corresponds to .codehilite in main.css */
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  font-family: 'Ubuntu Mono';
+  line-height: 1.3em;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+div.input_area { /* corresponds to .codehilite pre in main.css */
+  background: #fff;
+  border-color: #ccc #ccc #ccc #900;
+  border-style: solid;
+  border-width: 1px 1px 1px 2px;
+  margin: 0;
+  max-width: 100%;
+  overflow: auto;
+  padding: .5em 0 .5em 10px;
+}
+
+/*
+  Remove the prompt div from text cells and the horizontal padding, so it
+  aligns with non-ipynb text.
+*/
+div.text_cell .prompt {
+  display: none;
+}
+div.text_cell_render {
+  padding: 0.5em 0em;
+}
+
