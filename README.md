@@ -54,26 +54,29 @@ In oder to make it work, you have to adjust a few things in your `pelicanconf.py
    page. Otherwise, you have to adjust the `page.html` template.
    But then, you might want to do the contact form completely different anyway.
 
-6. For the inclusion of IPython notebooks, you need the `liquid_tags` plugin
-   for pelican, and provide the required parameters:
+6. For the inclusion of IPython notebooks, you need my modified
+   [`liquid_tags`](https://github.com/prisae/pelican-plugins/blob/master/liquid_tags/notebook.py)
+    plugin for pelican, and provide the required parameters (I also use the
+    `neighbors` plugin in the article-template):
 
     ```
     PLUGIN_PATH = '/path/to/your/plugins'
-    PLUGINS = ['liquid_tags.notebook',]
+    PLUGINS = ['liquid_tags.notebook', 'neighbors']
     NOTEBOOK_DIR = '/path/to/your/notebooks/relative/to/blog/path'
     ```
 
+The modified plugin `liquid_tags` will create the following files:
+
+* `output/theme/static/css/ipynb.css`
+* `output/theme/static/js/collapsecode.js`
+* `output/theme/static/js/math.js`
+
+
 The following files are, strictly speaking, not part of the theme itself:
 
-* `dashof/static/css/ipynb.css`
 * `dashof/static/css/normalize.css`
 * `dashof/static/css/pygment.css`
-* `dashof/static/js/collapsecode.js`
 * `dashof/static/js/gen_validatorv4.js`
-* `dashof/static/js/math.js`
-
-The files `ipynb.css`, `collapsecode.js`, and `math.js` are created by the
-plugin `liquid_tags.notebook`.
 
 The file `normalize.css` is from [git.io/normalize](http://git.io/normalize).
 
@@ -83,4 +86,5 @@ The file `gen_validatorv4.js` is from
 The file `pygment.css` was created with
 
     $ pygmentize -S default -f html > dashof/static/css/pygment.css
+
 
