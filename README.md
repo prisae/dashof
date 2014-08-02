@@ -54,7 +54,7 @@ In oder to make it work, you have to adjust a few things in your `pelicanconf.py
    page. Otherwise, you have to adjust the `page.html` template.
    But then, you might want to do the contact form completely different anyway.
 
-6. For the inclusion of IPython notebooks, you need my modified
+6. For the inclusion of IPython notebooks, you need my modified version of the
    [`liquid_tags`](https://github.com/prisae/pelican-plugins/blob/master/liquid_tags/notebook.py)
     plugin for pelican, and provide the required parameters (I also use the
     `neighbors` plugin in the article-template):
@@ -72,7 +72,7 @@ The modified plugin `liquid_tags` will create the following files:
 * `output/theme/static/js/math.js`
 
 
-The following files are, strictly speaking, not part of the theme itself:
+The following files are not provided by this theme itself:
 
 * `dashof/static/css/normalize.css`
 * `dashof/static/css/pygment.css`
