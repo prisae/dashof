@@ -205,6 +205,7 @@ code { /* Inline code */
 }
 .paginator { /* On blog-index for next/previous */
   text-align: center;
+  padding: 2em 0;
 }
 .left {
   float: left;

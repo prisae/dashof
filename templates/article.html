@@ -9,8 +9,7 @@
   {% for description in article.description %}<meta name="description" contents="{{description}}" />{% endfor %}
   {% for tag in article.tags %}<meta name="tags" contents="{{tag}}" />{% endfor %}
 
-  <!-- If the post contain parts or all of a IPython notebook.
-       (Blog entry MUST have the 'ipynb'-tag) -->
+  <!-- Additional css and js if the blog entry contains the 'ipynb'-tag -->
   {% if "ipynb" in article.tags %}
   <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/ipynb.css" />
   <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/ipynb_mod.css" />
@@ -31,6 +30,22 @@
 
       <article class="optborder">
         {{ article.content }}
+
+        <div class="paginator">
+          {% if article.prev_article %}
+          <p class='left'>
+            <a class='tightbutton' href="{{ SITEURL }}/{{ article.prev_article.url}}">&laquo;</a>
+            <a href="{{ SITEURL }}/{{ article.prev_article.url}}">{{ article.prev_article.title }}</a>
+          </p>
+          {% endif %}
+          {% if article.next_article %}
+          <p class='right'>
+            <a href="{{ SITEURL }}/{{ article.next_article.url}}">{{ article.next_article.title }}</a>
+            <a class='tightbutton' href="{{ SITEURL }}/{{ article.next_article.url}}">&raquo;</a>
+          </p>
+          {% endif %}
+        </div>
+
       </article>
 
       {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
