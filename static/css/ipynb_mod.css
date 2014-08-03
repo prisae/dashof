@@ -3,50 +3,112 @@
 
   These modifications are to match the IPython notebook with the main.css
   theme, that I use in the rest of the website/blog.
+
+  The classes are basically adjusted from ipynb.css. Have a look at ipynb.css
+  for more information, but brace yourself, it contains roughly 1600 lines..
+
 */
 
-/* Reset font and size */
-div.prompt,
-pre.ipynb,
-div.output_area pre {
-  font-family: 'Ubuntu Mono';
-  font-size: 1em;
-  }
-/* Reset border radius */
-pre,
-div.input_area {
-  border-radius: 0;
+div.cell {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+  -moz-box-align: stretch;
+  -moz-box-orient: vertical;
+  width: 100%;
 }
-pre.ipynb { /* corresponds to .codehilite in main.css */
-  background: #fff;
-  border: none;
-  box-shadow: none;
+.border-box-sizing {
+  box-sizing: border-box;
+}
+div.input,
+div.output { /* parts of .codehilite */
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
   font-family: 'Ubuntu Mono';
-  line-height: 1.3em;
-  font-size: 1em;
+  font-size: .9em;
   font-weight: normal;
-  margin: 0;
-  padding: 0 0 0 10px;
+  line-height: 1.3em;
+  -moz-box-align: stretch;
+  -moz-box-orient: horizontal;
+  page-break-inside: avoid;
 }
-div.input_area { /* corresponds to .codehilite pre in main.css */
+div.input_prompt {
+  color: #009;
+}
+div.output_prompt {
+  color: #900;
+}
+div.prompt,
+div.prompt:empty {
+  margin: 0;
+  min-width: 9ex;
+  padding-right: 10px;
+  text-align: right;
+}
+div.inner_cell {
+  align-items: stretch;
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  -moz-box-align: stretch;
+  -moz-box-flex: 1;
+  -moz-box-orient: vertical;
+}
+div.input_area { /* parts of .codehilite pre */
   background: #fff;
+  padding-left: 10px;
+  margin-bottom: 1em;
   border-color: #ccc #ccc #ccc #900;
   border-style: solid;
   border-width: 1px 1px 1px 2px;
-  margin: 0;
   max-width: 100%;
   overflow: auto;
-  padding: .5em 0 .5em 10px;
+}
+pre { /* parts of .codehilite pre */
+  margin: 0;
+}
+div.output_area {
+  line-height: 1.1em;
+}
+div.output_wrapper {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  -moz-box-align: stretch;
+  -moz-box-orient: vertical;
+  position: relative;
+}
+div.output_area {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  -moz-box-align: stretch;
+  -moz-box-orient: horizontal;
+  padding: 0;
+  page-break-inside: avoid;
+}
+div.output_subarea {
+  flex: 1 1 0%;
+  -moz-box-flex: 1;
+  padding: .4em .4em 0;
 }
 
 /*
-  Remove the prompt div from text cells and the horizontal padding, so it
-  aligns with non-ipynb text.
+  Overwriting pygments.css
+  It is the colour of LaTeX-rendered math in markdown cells.
 */
-div.text_cell .prompt {
-  display: none;
-}
-div.text_cell_render {
-  padding: 0.5em 0em;
+.mi,
+.mo {
+  color: #000;
 }
 
+img {
+
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0px none;
+
+}

@@ -5,14 +5,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, user-scalable=no">
 
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
+
   <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
   {% block head %}
   {% endblock head %}
   <meta name="description" content="{{ SITENAME }}">
   <meta name="author" content="{{ AUTHOR }}">
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
