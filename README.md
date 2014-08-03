@@ -68,7 +68,7 @@ In oder to make it work, you have to adjust a few things in your `pelicanconf.py
 The modified plugin `liquid_tags` will create the following files:
 
 * `output/theme/static/css/ipynb.css`
-* `output/theme/static/js/collapsecode.js`
+* `output/theme/static/js/collapse.js`
 * `output/theme/static/js/math.js`
 
 
