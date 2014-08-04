@@ -6,109 +6,66 @@
 
   The classes are basically adjusted from ipynb.css. Have a look at ipynb.css
   for more information, but brace yourself, it contains roughly 1600 lines..
+  That's the reason I don't use it anymore at all; it defines way more than
+  I need, and you can never be sure if it affects another part of your design.
 
 */
-
-div.cell {
-  align-items: stretch;
-  display: flex;
-  flex-direction: column;
+.cell {
+  display: block;
   margin: 1em 0;
-  -moz-box-align: stretch;
-  -moz-box-orient: vertical;
   width: 100%;
 }
-.border-box-sizing {
-  box-sizing: border-box;
-}
-div.input,
-div.output { /* parts of .codehilite */
-  align-items: stretch;
-  display: flex;
-  flex-direction: row;
+.input,
+.output { /* .codehilite */
   font-family: 'Ubuntu Mono';
-  font-size: .9em;
   font-weight: normal;
   line-height: 1.3em;
-  -moz-box-align: stretch;
-  -moz-box-orient: horizontal;
-  page-break-inside: avoid;
+  margin: 0;
 }
-div.input_prompt {
+.input_prompt {
   color: #009;
 }
-div.output_prompt {
+.output_prompt {
   color: #900;
 }
-div.prompt,
-div.prompt:empty {
-  margin: 0;
-  min-width: 9ex;
-  padding-right: 10px;
-  text-align: right;
-}
-div.inner_cell {
-  align-items: stretch;
-  display: flex;
-  flex: 1 1 0%;
-  flex-direction: column;
-  -moz-box-align: stretch;
-  -moz-box-flex: 1;
-  -moz-box-orient: vertical;
-}
-div.input_area { /* parts of .codehilite pre */
-  background: #fff;
+.input_prompt,
+.output_prompt {
+  background: #eee;
+  margin: 1em 0 .5em;
   padding-left: 10px;
-  margin-bottom: 1em;
+}
+.input_area { /* .codehilite pre */
+  background: #fff;
   border-color: #ccc #ccc #ccc #900;
   border-style: solid;
   border-width: 1px 1px 1px 2px;
+  margin-left: 10px;
   max-width: 100%;
   overflow: auto;
+  padding-left: 10px;
 }
-pre { /* parts of .codehilite pre */
+.input_area pre,
+.output_area pre {
+  font-family: 'Ubuntu Mono';
+  font-weight: normal;
   margin: 0;
 }
-div.output_area {
-  line-height: 1.1em;
+.output_subarea {
+  line-height: 1.2em;
+  padding: 1em 0 0 10px;
 }
-div.output_wrapper {
-  align-items: stretch;
-  display: flex;
-  flex-direction: column;
-  -moz-box-align: stretch;
-  -moz-box-orient: vertical;
-  position: relative;
+.output_subarea img {
+  border: 0 none;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
 }
-div.output_area {
-  align-items: stretch;
-  display: flex;
-  flex-direction: row;
-  -moz-box-align: stretch;
-  -moz-box-orient: horizontal;
-  padding: 0;
-  page-break-inside: avoid;
-}
-div.output_subarea {
-  flex: 1 1 0%;
-  -moz-box-flex: 1;
-  padding: .4em .4em 0;
-}
-
 /*
   Overwriting pygments.css
-  It is the colour of LaTeX-rendered math in markdown cells.
+  This is the colour of LaTeX-rendered math in markdown cells.
 */
-.mi,
-.mo {
+.rendered_html .mi,
+.rendered_html .mo {
   color: #000;
 }
 
-img {
-
-    height: auto;
-    max-width: 100%;
-    vertical-align: middle;
-    border: 0px none;
-
-}

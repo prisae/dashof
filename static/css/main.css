@@ -182,7 +182,6 @@ main h1 {
   margin: 0 auto;
 }
 .codehilite {
-  font-size: .9em;
   font-family: 'Ubuntu Mono';
   font-weight: normal;
   line-height: 1.3em;
@@ -191,13 +190,14 @@ main h1 {
 }
 .codehilite pre {
   background: #fff;
-  padding-left: 10px;
   border-color: #ccc #ccc #ccc #900;
   border-style: solid;
   border-width: 1px 1px 1px 2px;
+  font-family: 'Ubuntu Mono';
   margin: 0;
   max-width: 100%;
   overflow: auto;
+  padding-left: 10px;
 }
 code { /* Inline code */
   font-family: 'Ubuntu Mono';
@@ -251,8 +251,8 @@ code { /* Inline code */
 .mail-me {
   line-height: 1.6;
   margin: 0 2em 0 0;
-  padding: 15px;
   max-width: 500px;
+  padding: 15px;
 }
 .mail-me h3 {
   font-weight: 700;
@@ -319,7 +319,7 @@ footer p a:active {
 */
 .button,
 .tightbutton {
-  background: #EEE;
+  background: #eee;
   border: 2px solid #900;
   border-radius: 4px;
   color: #009;
@@ -352,8 +352,8 @@ footer p a:active {
 @media all and (max-width: 842px) {
   .noborder,
   .optborder {
-    padding-left: 0;
     border-left: 0;
+    padding-left: 0;
   }
 }
 
@@ -394,7 +394,7 @@ footer p a:active {
 */
 @media print {
   body {
-    background: #ffffff;
+    background: #fff;
     font-size: .9em;
     line-height: 1.1em;
   }
@@ -403,8 +403,8 @@ footer p a:active {
   }
   .noborder,
   .optborder {
-    padding-left: 0;
     border-left: 0;
+    padding-left: 0;
   }
   footer,
   nav,
