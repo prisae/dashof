@@ -398,9 +398,6 @@ footer p a:active {
     font-size: .9em;
     line-height: 1.1em;
   }
-  header {
-    padding-bottom: 0;
-  }
   .noborder,
   .optborder {
     border-left: 0;
@@ -408,6 +405,8 @@ footer p a:active {
   }
   footer,
   nav,
+  .comments,
+  .paginator,
   .button {
     display: none;
   }
