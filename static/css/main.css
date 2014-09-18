@@ -57,6 +57,12 @@ strong {
 em {
   font-weight: 400;
 }
+img {
+  border: 0 none;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
 .caps {
   text-transform: uppercase;
 }
@@ -81,7 +87,6 @@ em {
   min-height: 100%;
   position: relative;
 }
-
 /*
   HEADER
 */
