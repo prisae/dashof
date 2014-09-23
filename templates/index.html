@@ -14,7 +14,7 @@
           <article>
             <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
             <h4> {{ article.locale_date }} </h4>
-            <p> {{ article.summary }} </p>
+            {{ article.summary }}
           </article>
           {% endfor %}
       </section>
