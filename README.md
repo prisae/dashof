@@ -23,19 +23,21 @@ In oder to make it work, you have to adjust a few things in your `pelicanconf.py
     BLOGDIR = 'blog'
     ```
 
-2. Pelican 3.3.0: You have to insert your blog-directory into the `PAGINATION_PATTERNS`:
+2. Blog-directory
 
-    ```
-    PAGINATION_PATTERNS = (
-        (1, '{base_name}/index.html', '{base_name}/blog/index.html'),
-        (2, '{base_name}/index{number}.html', '{base_name}/blog/index{number}.html'),
-        )
-    ```
-2. Pelican 3.5.0: You have to insert your blog-directory into the `INDEX_SAVE_AS`:
+  1. Pelican 3.3.0: You have to insert your blog-directory into the `PAGINATION_PATTERNS`:
 
-    ```
-    INDEX_SAVE_AS = 'blog/index.html'
-    ```
+      ```
+      PAGINATION_PATTERNS = (
+          (1, '{base_name}/index.html', '{base_name}/blog/index.html'),
+          (2, '{base_name}/index{number}.html', '{base_name}/blog/index{number}.html'),
+          )
+      ```
+  2. Pelican 3.5.0: You have to insert your blog-directory into the `INDEX_SAVE_AS`:
+
+      ```
+      INDEX_SAVE_AS = 'blog/index.html'
+      ```
 
 3. The blog-name in the static menu must agree with your `BLOGDIR` (the example
    is from my setting):
