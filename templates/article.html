@@ -34,14 +34,12 @@
         <div class="paginator">
           {% if article.prev_article %}
           <p class='left'>
-            <a class='tightbutton' href="{{ SITEURL }}/{{ article.prev_article.url}}">&laquo;</a>
-            <a href="{{ SITEURL }}/{{ article.prev_article.url}}">{{ article.prev_article.title }}</a>
+            <a href="{{ SITEURL }}/{{ article.prev_article.url}}">&laquo;&nbsp;{{ article.prev_article.title }}</a>
           </p>
           {% endif %}
           {% if article.next_article %}
           <p class='right'>
-            <a href="{{ SITEURL }}/{{ article.next_article.url}}">{{ article.next_article.title }}</a>
-            <a class='tightbutton' href="{{ SITEURL }}/{{ article.next_article.url}}">&raquo;</a>
+            <a href="{{ SITEURL }}/{{ article.next_article.url}}">{{ article.next_article.title }}&nbsp;&raquo;</a>
           </p>
           {% endif %}
         </div>
