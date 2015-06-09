@@ -1,34 +1,23 @@
 {% extends "base.html" %}
 
 {% block title %}
-{{ SITENAME }} | Blog
+{{ SITENAME }} | {{ article.title }}
 {% endblock %}
 
 {% block head %}
   {% for keyword in article.keywords %}<meta name="keywords" contents="{{keyword}}" />{% endfor %}
   {% for description in article.description %}<meta name="description" contents="{{description}}" />{% endfor %}
   {% for tag in article.tags %}<meta name="tags" contents="{{tag}}" />{% endfor %}
-
-  <!-- Additional css and js if the blog entry contains the 'ipynb'-tag -->
-  {% if "ipynb" in article.tags %}
-  <!--link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/ipynb.css" /-->
-  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/ipynb_mod.css" />
-  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="{{ SITEURL }}/theme/js/math.js"></script>
-  <script src="{{ SITEURL }}/theme/js/collapse.js"></script>
-  {% endif %}
-
 {% endblock head%}
 
 {% block content %}
 
-      <div class="noborder post-title">
+      <div class="post-title">
         <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
         <h4>{{ article.locale_date }}</h4>
       </div>
 
-      <article class="optborder">
+      <article>
         {{ article.content }}
 
         <div class="paginator">
@@ -45,22 +34,5 @@
         </div>
 
       </article>
-
-      {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
-      <div class="noborder comments hgrad">
-        <h2>Comments</h2>
-        <p>Guest comments are possible, just tick the box "I'd rather post as guest" once you entered your name.</p>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-          var disqus_identifier = "{{ article.url }}";
-          var disqus_url = "{{ SITEURL }}/{{ BLOGDIR }}/{{ article.url }}";
-          (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-        </script>
-      </div>
-      {% endif %}
 
 {% endblock content %}

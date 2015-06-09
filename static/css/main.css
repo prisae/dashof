@@ -1,6 +1,6 @@
 /*
-  Main CSS file of pelican-theme `dashof`.
-  2014 Dieter Werthmuller
+  Main CSS file of pelican-theme `dashof-simple`.
+  2015 Dieter Werthmuller
   *
   License: CC0 1.0; http://creativecommons.org/publicdomain/zero/1.0/
 */
@@ -9,6 +9,12 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,400italic,700);
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Special+Elite);
+
+/* Mexican Colours
+   - Green #006847
+   - White #FFFFFF
+   - Red   #CE1126
+*/
 
 /*
   GENERAL SETTINGS
@@ -19,7 +25,7 @@ html {
                        down to 320px. That's the minimum */
 }
 body {
-  background: #fefefe;
+  background: #eee;
   color: #000;
   font-family: 'Ubuntu',sans-serif;
   font-size: 1em;
@@ -43,12 +49,12 @@ footer { /* HTML structural elements */
 }
 a:link,
 a:visited {
-  color: #009;
+  color: #006847;
   text-decoration: none;
 }
 a:hover,
 a:active {
-  color: #900;
+  color: #CE1126;
   transition: .5s;
 }
 strong {
@@ -63,17 +69,8 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
-.caps {
-  text-transform: uppercase;
-}
-.libracket { /* Elliptic borders around links */
-  border-left: 2px solid #900;
-  border-radius: 1em/2em;
-  border-right: 2px solid #900;
-  padding: 0 .3em;
-}
 .hgrad:before { /* Horizontal green gradient */
-  background: linear-gradient(to right, #fff 0%,#090 50%,#fff 100%);
+  background: linear-gradient(to right, #fff 0%,#000 50%,#fff 100%);
   content: "";
   display: block;
   height: 1px;
@@ -84,6 +81,7 @@ img {
   Needed so footer is at bottom if page is less than 100 % height
 */
 #wrapper {
+  background: #FFF;
   min-height: 100%;
   position: relative;
 }
@@ -91,34 +89,39 @@ img {
   HEADER
 */
 header {
-  background: transparent url(/theme/images/banner.svg) repeat-x bottom;
-  padding-bottom: 30px;
-  text-align: right;
+  text-align: center;
 }
 header h1 {
   display: inline-block;
   font-family: 'Special Elite';
   font-size: 2.5em;
   font-weight: 400;
-  margin: 1em 1em 0 0;
+  margin: 1em 0 0 0;
 }
 header h2 {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 300;
-  margin: 1em 4em 0 0;
+  margin: 1em 0 0 0;
 }
-header a:link,
-header a:visited,
-header a:hover,
-header a:active {
-  color: #900;
+header h1 a:link,
+header h1 a:visited,
+header h1 a:hover,
+header h1 a:active {
+  color: #CE1126;
+}
+header h2 a:link,
+header h2 a:visited,
+header h2 a:hover,
+header h2 a:active {
+  color: #000;
 }
 
 /*
   NAVIGATION
 */
 nav {
-  font-size: 1.2em;
+  font-family: 'Special Elite';
+  font-size: 1em;
   margin: 0 auto;
   text-align: center;
   width: 95%;
@@ -126,13 +129,30 @@ nav {
 nav ul {
   display: inline-block;
   list-style: none;
-  margin: 0 auto;
+  margin: 3px auto;
   padding: 0;
   text-align: center;
 }
 nav li {
   display: inline;
   margin: 0 1.3em;
+}
+nav a:link,
+nav a:visited {
+  color: #000;
+  text-decoration: none;
+}
+nav a:hover,
+nav a:active {
+  color: #CE1126;
+  transition: .5s;
+}
+
+.active a:link,
+.active a:visited,
+.active a:hover,
+.activev a:active {
+  color: #CE1126;
 }
 
 /*
@@ -141,7 +161,7 @@ nav li {
 main {
   margin: 0 auto;
   max-width: 800px;
-  padding-bottom: 80px;
+  padding-bottom: 50px;
   width: 95%;
 }
 main h1 {
@@ -151,15 +171,10 @@ main h1,
 main h2 {
   line-height: 1.5em;
 }
-.noborder,
-.optborder {
-  padding-left: 1em;
-}
-.optborder {
-  border-left: 1px solid #ccc;
-}
 .post-title {} /* Blog head area */
-.post-list {} /* List of posts */
+.post-list { /* List of posts */
+  text-align: center;
+}
 .post-title h1,
 .post-title h4,
 .post-list h2,
@@ -195,28 +210,6 @@ main h2 {
   margin: .5em auto;
   max-width: 200px;
 }
-.codehilite {
-  font-family: 'Ubuntu Mono';
-  font-weight: normal;
-  line-height: 1.3em;
-  margin: 0;
-  padding-left: 10px;
-}
-.codehilite pre {
-  background: #fff;
-  border-color: #ccc #ccc #ccc #900;
-  border-style: solid;
-  border-width: 1px 1px 1px 2px;
-  font-family: 'Ubuntu Mono';
-  margin: 0;
-  max-width: 100%;
-  overflow: auto;
-  padding-left: 10px;
-}
-code { /* Inline code */
-  font-family: 'Ubuntu Mono';
-  font-weight: normal;
-}
 .paginator { /* On blog-index for next/previous */
   text-align: center;
   padding: 2em 0;
@@ -229,34 +222,6 @@ code { /* Inline code */
 }
 .comments { /* Comments section */
   margin-top: 5em;
-}
-
-/*
-  RESEARCH
-  The research section has some special formatting
-*/
-.research {}
-.research ul {
-  list-style: none;
-}
-.research li {
-  margin-bottom: 1.5em;
-}
-.research h2 {
-  margin-top: 2em;
-}
-.research h3,
-.research h4 {
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-}
-.research h3 {
-  color: #900;
-}
-.research p {
-  margin: 0;
-  padding: 0;
 }
 
 /*
@@ -275,7 +240,7 @@ code { /* Inline code */
 }
 .mail-me input[type="text"],
 .mail-me textarea {
-  border: 1px solid #090;
+  border: 1px solid #006847;
   border-radius: 4px;
   height: 20px;
   margin: 2px 6px 16px 0;
@@ -285,13 +250,13 @@ code { /* Inline code */
 }
 .mail-me input[type="text"]:focus,
 .mail-me textarea:focus {
-  box-shadow: 0 0 4px #090;
+  box-shadow: 0 0 4px #006847;
 }
 .mail-me textarea {
   height: 100px;
 }
 .error_strings { /* Error by sending message; class from gen_validatorv4.js */
-  color: #900;
+  color: #CE1126;
 }
 
 /*
@@ -299,7 +264,7 @@ code { /* Inline code */
 */
 footer {
   bottom: 0;
-  height: 55px;
+  height: 25px;
   position: absolute;
   text-align: center;
   width: 100%;
@@ -308,17 +273,6 @@ footer p {
   font-size: .8em;
   font-weight: 300;
   margin: 0;
-}
-footer ul {
-  display: inline-block;
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
-}
-footer li {
-  display: inline;
-  margin: 0 1.5em;
 }
 footer p a:link,
 footer p a:hover,
@@ -334,9 +288,9 @@ footer p a:active {
 .button,
 .tightbutton {
   background: #eee;
-  border: 2px solid #900;
+  border: 2px solid #CE1126;
   border-radius: 4px;
-  color: #009;
+  color: #006847;
   display: inline-block;
   font-weight: 700;
   padding: 10px 25px;
@@ -348,9 +302,9 @@ footer p a:active {
 .button:active,
 .tightbutton:hover,
 .tightbutton:active{
-  color: #090;
+  color: #006847;
   transition: .5s;
-  box-shadow: 0 0 4px #900; 
+  box-shadow: 0 0 4px #CE1126; 
 }
 
 /*
@@ -364,11 +318,6 @@ footer p a:active {
   border-line, as the content fills the whole page width.
 */
 @media all and (max-width: 842px) {
-  .noborder,
-  .optborder {
-    border-left: 0;
-    padding-left: 0;
-  }
 }
 
 /*
@@ -411,11 +360,6 @@ footer p a:active {
     background: #fff;
     font-size: .9em;
     line-height: 1.1em;
-  }
-  .noborder,
-  .optborder {
-    border-left: 0;
-    padding-left: 0;
   }
   footer,
   nav,

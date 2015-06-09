@@ -95,3 +95,8 @@ The file `pygment.css` was created with
     $ pygmentize -S default -f html > dashof/static/css/pygment.css
 
 
+dashof-simple
+-------------
+
+An even simpler version of the `dashof`-theme. You can see it in action here:
+[dashof-simple](http://mexico.werthmuller.org).
