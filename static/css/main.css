@@ -65,7 +65,23 @@ em {
 }
 img {
   border: 0 none;
+  display: block;
   height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.biwc { /* biwc: blog-image with caption */
+  display: block;
+  font-size: .9em;
+  font-style: italic;
+  text-align: center;
+}
+.biwc img {
+  border: 0px none;
+  border-radius: 10px;
+  box-shadow: 0 0 2px #006847;
+  height: auto;
+  margin: 5px auto;
   max-width: 100%;
   vertical-align: middle;
 }
