@@ -35,4 +35,14 @@
 
       </article>
 
+      {% if SITEURL and article.status != "draft" %}
+          <div class="comsection">
+            <div class="comments">
+              <h2>Kommentare</h2>
+              <script type="text/javascript" src="/hashover.js"></script>
+              <noscript>JavaScript muss aktiviert sein um Kommentare zu sehen und zu schreiben.</noscript>
+            </div>
+          </div>
+      {% endif %}
+
 {% endblock content %}

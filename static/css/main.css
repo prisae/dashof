@@ -10,6 +10,9 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Special+Elite);
 
+/* Styles for HashOver Comments */
+@import url('/hashover/comments.css');
+
 /* Mexican Colours
    - Green #006847
    - White #FFFFFF
@@ -236,8 +239,11 @@ main h2 {
 .right {
   float: right;
 }
-.comments { /* Comments section */
-  margin-top: 5em;
+.comsection { /* Comments section */
+  padding: 0 1em;
+  border: 0px none;
+  border-radius: 10px;
+  box-shadow: 0 0 2px #006847;
 }
 
 /*
@@ -379,7 +385,8 @@ footer p a:active {
   }
   footer,
   nav,
-  .comments,
+  header h2,
+  .comsection,
   .paginator,
   .button {
     display: none;
