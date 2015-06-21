@@ -1,6 +1,6 @@
 /*
   Main CSS file of pelican-theme `dashof`.
-  2014 Dieter Werthmuller
+  2014-15 Dieter Werthmuller
   *
   License: CC0 1.0; http://creativecommons.org/publicdomain/zero/1.0/
 */
@@ -231,7 +231,7 @@ code { /* Inline code */
   float: right;
 }
 .comsection { /* Comments section */
-  border: 1px solid #EEE;
+  border: 1px solid #999;
   border-radius: 5px;
   margin-top: 2em;
   padding: 0 1em;
