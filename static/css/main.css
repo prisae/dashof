@@ -242,7 +242,8 @@ main h2 {
 .comsection { /* Comments section */
   border: 1px solid #999;
   border-radius: 5px;
-  padding: 1em;
+  margin-top: 2em;
+  padding: 0 1em;
 }
 
 /*
