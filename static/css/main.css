@@ -240,10 +240,9 @@ main h2 {
   float: right;
 }
 .comsection { /* Comments section */
-  padding: 0 1em;
-  border: 0px none;
-  border-radius: 10px;
-  box-shadow: 0 0 2px #006847;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 1em;
 }
 
 /*
