@@ -10,6 +10,9 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Special+Elite);
 
+/* Styles for HashOver Comments */
+@import url('/hashover/comments.css');
+
 /*
   GENERAL SETTINGS
 */
@@ -227,8 +230,11 @@ code { /* Inline code */
 .right {
   float: right;
 }
-.comments { /* Comments section */
-  margin-top: 5em;
+.comsection { /* Comments section */
+  border: 1px solid #EEE;
+  border-radius: 5px;
+  margin-top: 2em;
+  padding: 0 1em;
 }
 
 /*
@@ -419,7 +425,7 @@ footer p a:active {
   }
   footer,
   nav,
-  .comments,
+  .comsection,
   .paginator,
   .button {
     display: none;

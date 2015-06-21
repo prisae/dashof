@@ -46,21 +46,14 @@
 
       </article>
 
-      {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
-      <div class="noborder comments hgrad">
-        <h2>Comments</h2>
-        <p>Guest comments are possible, just tick the box "I'd rather post as guest" once you entered your name.</p>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-          var disqus_identifier = "{{ article.url }}";
-          var disqus_url = "{{ SITEURL }}/{{ BLOGDIR }}/{{ article.url }}";
-          (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-        </script>
-      </div>
+      {% if SITEURL and article.status != "draft" %}
+        <div class="noborder comsection">
+          <div class="comments">
+            <h2>Comments</h2>
+            <script type="text/javascript" src="/hashover.js"></script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+          </div>
+        </div>
       {% endif %}
 
 {% endblock content %}
