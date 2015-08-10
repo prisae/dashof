@@ -73,12 +73,23 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
+/* binb and biwc are for the md_inline extensions I use.
+ * binb is for multiple figures, without a caption, if you want the figures to
+ *      co side by side if there is enough place.
+ * biwc is for a single figure with caption, or multiple figures with one
+ *      caption, but each figure is wrapped in a block.
+ * For multiple figures that wrap and a caption, you have to use binb fur the
+ * figures, and biwc for the caption.
+ * BETTER SOLUTIONS ARE WELCOMED!
+*/
+.binb,
 .biwc { /* biwc: blog-image with caption */
   display: block;
   font-size: .9em;
   font-style: italic;
   text-align: center;
 }
+.binb img,
 .biwc img {
   border: 0px none;
   border-radius: 10px;
@@ -88,6 +99,11 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
+.binb img {
+  display: inline;
+  margin: 5px 5px auto;
+}
+
 .hgrad:before { /* Horizontal green gradient */
   background: linear-gradient(to right, #fff 0%,#000 50%,#fff 100%);
   content: "";
