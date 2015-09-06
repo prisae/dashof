@@ -14,6 +14,7 @@
 
       <div class="post-title">
         <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
+        {% if article.subtitle %} <h3> {{ article.subtitle }} </h3>{% endif %}
         <h4>{{ article.locale_date }}</h4>
       </div>
 
