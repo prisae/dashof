@@ -6,9 +6,10 @@
 */
 @import url(normalize.css);
 @import url(pygment.css);
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,400italic,700);
-@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Special+Elite);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700);
+@import url(https://fonts.googleapis.com/css?family=Cutive+Mono);
+
 
 /* Styles for HashOver Comments */
 @import url('/hashover/comments.css');
@@ -30,16 +31,19 @@ html {
 body {
   background: #eee;
   color: #000;
-  font-family: 'Ubuntu',sans-serif;
+  font-family: 'Merriweather', sans-serif;
   font-size: 1em;
-  font-weight: 400;
+  font-weight: 300;
   height: 100%;
-  line-height: 1.5em;
+  line-height: 1.7em;
   margin: auto;
   max-width: 1050px;
   padding: 0;
   text-align: left;
   width: 100%;
+}
+code {
+  font-family: 'Cutive+Mono', sans-serif;
 }
 header,
 nav,
@@ -50,6 +54,12 @@ summary,
 footer { /* HTML structural elements */
   display: block;
 }
+.print {
+    display: none;
+  }
+.web {
+    display: inline;
+  }
 a:link,
 a:visited {
   color: #006847;
@@ -59,12 +69,6 @@ a:hover,
 a:active {
   color: #CE1126;
   transition: .5s;
-}
-strong {
-  font-weight: 700;
-}
-em {
-  font-weight: 400;
 }
 img {
   border: 0 none;
@@ -78,6 +82,7 @@ img {
   - crcb  (+=+): centred, rounded corners, block
   - cnf   (+=-): centred, no frame, block
   - crcnb (+-+): centred, rounded corners, no block
+  - cnfnb (+--): centred, no frame, no block
  BETTER SOLUTIONS ARE WELCOMED!
 */
 .cnf,
@@ -89,6 +94,7 @@ img {
   text-align: center;
 }
 .cnf img,
+.cnfnb img,
 .crcnb img,
 .crcb img {
   border: 0px none;
@@ -102,6 +108,7 @@ img {
   border-radius: 10px;
   box-shadow: 0 0 2px #006847;
 }
+.cnfnb img,
 .crcnb img {
   display: inline;
   margin: 5px;
@@ -222,11 +229,9 @@ main h2 {
   font-family: 'Special Elite';
 }
 .post-title h1 {
-  line-height: 1.5;
   margin:  1em 0 0 0;
 }
 .post-title h3 {
-  line-height: 1;
   margin: 0 ;
 }
 .post-title h4 {
@@ -399,20 +404,39 @@ footer p a:active {
 
 /*
   Print settings
-  Just a few.
 */
 @media print {
   body {
     background: #fff;
-    font-size: .9em;
-    line-height: 1.1em;
+    width: 820px;
   }
-  footer,
+  main {
+    width: 810px;
+  }
+  .print {
+    display: inline;
+  }
+  .web,
   nav,
+  header h1,
   header h2,
   .comsection,
   .paginator,
   .button {
     display: none;
+  }
+  footer {
+    font-family: 'Special Elite';
+    position: relative;
+    font-weight: 400;
+    font-size: 1em;
+  }
+  .cnf,
+  .cnfnb,
+  .crcnb,
+  .crcb {
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
   }
 }
