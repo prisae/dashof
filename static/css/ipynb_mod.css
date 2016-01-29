@@ -61,6 +61,12 @@
   vertical-align: middle;
 }
 /*
+  Hide the anchors
+*/
+.anchor-link {
+  visibility: hidden;
+}
+/*
   Overwriting pygments.css
   This is the colour of LaTeX-rendered math in markdown cells.
 */
