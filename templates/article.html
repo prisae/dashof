@@ -8,6 +8,10 @@
   {% for keyword in article.keywords %}<meta name="keywords" contents="{{keyword}}" />{% endfor %}
   {% for description in article.description %}<meta name="description" contents="{{description}}" />{% endfor %}
   {% for tag in article.tags %}<meta name="tags" contents="{{tag}}" />{% endfor %}
+{% if article.status == "draft" %}
+    <meta name="robots" content="noindex, nofollow">
+{% endif %}
+
 {% endblock head%}
 
 {% block content %}

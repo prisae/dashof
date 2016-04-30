@@ -32,7 +32,7 @@ body {
   font-family: 'Merriweather', sans-serif;
   font-size: 1em;
   font-weight: 300;
-  height: 100%;
+  height: 99.5%;
   line-height: 1.7em;
   margin: auto;
   max-width: 1050px;
@@ -82,10 +82,19 @@ img {
   - cnf   (+=-): centred, no frame, block
   - crcnb (+-+): centred, rounded corners, no block
   - cnfnb (+--): centred, no frame, no block
+  - ctxt (+++): for caption
  BETTER SOLUTIONS ARE WELCOMED!
 */
+.ctxt {
+  display: block;
+  font-size: .9em;
+  font-style: italic;
+  text-align: center;
+  margin: 0 auto 2em;
+}
 .cnf,
 .crcnb,
+.cnfnb,
 .crcb { /* crcb: blog-image with caption */
   display: block;
   font-size: .9em;
