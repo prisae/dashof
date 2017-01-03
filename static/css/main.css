@@ -9,10 +9,6 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700);
 @import url(https://fonts.googleapis.com/css?family=Cutive+Mono);
 
-
-/* Styles for HashOver Comments */
-@import url('/hashover/comments.css');
-
 /* Mexican Colours
    - Green #006847
    - White #FFFFFF
@@ -280,6 +276,18 @@ main h2 {
   border-radius: 5px;
   margin-top: 5em;
   padding: 0 1em;
+}
+
+/* Foldable comments: http://stackoverflow.com/a/38905720 */
+.answer,
+#show,
+#hide:target {
+  display: none;
+}
+
+#hide:target + #show,
+#hide:target ~ .answer {
+  display: inline;
 }
 
 /*
