@@ -48,10 +48,14 @@
 
       {% if SITEURL and article.status != "draft" %}
         <div class="comsection">
-          <div class="comments">
-            <h2>Comments</h2>
-            <script type="text/javascript" src="/hashover/hashover.js"></script>
-            <noscript>Please enable JavaScript to view the comments.</noscript>
+          <a href="#hide" id="hide">Show comments</a>
+          <a href="#show" id="show">Hide comments</a>
+          <div class="answer">
+            <div class="comments">
+              <h2>Comments</h2>
+              <script type="text/javascript" src="/hashover/hashover.js"></script>
+              <noscript>Please enable JavaScript to view the comments.</noscript>
+            </div>
           </div>
         </div>
       {% endif %}
