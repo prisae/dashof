@@ -42,14 +42,9 @@
 
       {% if SITEURL and article.status != "draft" %}
         <div class="comsection">
-          <a href="#hide" id="hide">Kommentare einblenden</a>
-          <a href="#show" id="show">Kommentare ausblenden</a>
-          <div class="answer">
-            <div class="comments">
-              <h2>Kommentare</h2>
-              <script type="text/javascript" src="/hashover/hashover.js"></script>
-              <noscript>JavaScript muss aktiviert sein um Kommentare zu sehen und zu schreiben.</noscript>
-            </div>
+          <div class="comments">
+            <script type="text/javascript" src="/hashover/hashover.js"></script>
+            <noscript>JavaScript muss aktiviert sein um Kommentare zu sehen und zu schreiben.</noscript>
           </div>
         </div>
       {% endif %}
