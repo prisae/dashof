@@ -78,6 +78,7 @@ img {
   - crcnb (+-+): centred, rounded corners, no block
   - cnfnb (+--): centred, no frame, no block
   - ctxt (+++): for caption
+  - ltxt (=++): left-aligned, 90 % width for quotes etc.
  BETTER SOLUTIONS ARE WELCOMED!
 */
 .ctxt {
@@ -86,6 +87,11 @@ img {
   font-style: italic;
   text-align: center;
   margin: 0 auto 2em;
+}
+.ltxt {
+  display: block;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .cnf,
 .crcnb,
