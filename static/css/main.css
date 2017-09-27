@@ -72,6 +72,25 @@ img {
   vertical-align: middle;
 }
 
+/* Tabel stuff */
+table {
+  border-collapse: collapse;
+}
+
+/* Zebra striping */
+tr:nth-of-type(even) {
+  background: #eee;
+}
+th {
+  background: #aaa;
+  color: #006847;
+  font-weight: bold;
+}
+td, th {
+  padding: 6px 20px;
+  border: 0px solid #ccc;
+}
+
 /* Settings for md_inline_extension
   - crcb  (+=+): centred, rounded corners, block
   - cnf   (+=-): centred, no frame, block
