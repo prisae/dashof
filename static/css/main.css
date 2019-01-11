@@ -293,6 +293,12 @@ code { /* Inline code */
   color: #900;
 }
 
+.mail-me #message{
+  position:absolute;
+  left:-2000px;
+  width: 5px;
+}
+
 /*
   FOOTER
 */
